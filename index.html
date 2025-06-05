@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>랜덤 숫자</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #fafafa;
+      font-family: Arial, sans-serif;
+    }
+    .number {
+      font-size: 60px;
+      padding: 40px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="number" id="number">로딩 중...</div>
+
+  <script>
+    function getRandomNumber() {
+      const length = Math.floor(Math.random() * 3) + 4; // 4~6자리
+      const min = Math.pow(10, length - 1);
+      const max = Math.pow(10, length) - 1;
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    document.getElementById('number').innerText = getRandomNumber();
+  </script>
+</body>
+</html>
